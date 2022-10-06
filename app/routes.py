@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from flask import render_template
 from app import app
 from app.forms import LoginForm
@@ -7,3 +6,7 @@ from app.forms import LoginForm
 def login():
   form = LoginForm()
   return render_template('login.html', title='Sign in', form=form)
+
+@app.route('/')
+def hello_world():
+  return 'Hello, World!'
