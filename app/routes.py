@@ -7,8 +7,19 @@ from werkzeug.urls import url_parse
 
 
 @app.route('/index')
-def hello_world():
-  return render_template('base.html')
+def index():  
+  posts = [
+        {
+            'author': {'username': 'John'},
+            'body': 'Beautiful day in Portland!'
+        },
+        {
+            'author': {'username': 'Susan'},
+            'body': 'The Avengers movie was so cool!'
+        }
+    ]
+
+  return render_template('index.html', title="homepage", posts=posts)
 
 @login_required
 
