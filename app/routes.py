@@ -5,8 +5,10 @@ from app.forms import LoginForm
 from app.models import User
 from werkzeug.urls import url_parse
 
-
+@app.route('/')
 @app.route('/index')
+@login_required
+
 def index():  
   posts = [
         {
@@ -21,7 +23,6 @@ def index():
 
   return render_template('index.html', title="homepage", posts=posts)
 
-@login_required
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
