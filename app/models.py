@@ -57,9 +57,9 @@ class User(UserMixin, db.Model):
         followers.c.followed_id == user.id).count() > 0
 
     def followed_posts(self):
-      return Post.query.join(
-        followers, (followers.c.followed_id == Post.user_id)).filter(
-          followers.c.follower_id == self.id).order_by(Post.timestamp.desc())
+      return Post.query.join( ## Join followers and Posts on followed_id = Post.user_id (gets all followed posts)
+        followers, (followers.c.followed_id == Post.user_id)).filter( ## Filter out Users not followed by current user
+          followers.c.follower_id == self.id).order_by(Post.timestamp.desc()) ## Sort chronologically
 
 
 class Post(db.Model):
