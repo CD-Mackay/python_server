@@ -24,7 +24,7 @@ def index():
     db.session.add(post)
     db.session.commit()
     return redirect(url_for('index'))
-    
+
   posts = current_user.followed_posts.all()
 
 
@@ -67,6 +67,13 @@ def register():
     flash('Congrats, you are now a registered user')
     return redirect(url_for('login'))
   return render_template('registration.html', title="Register", form=form)
+
+@app.route('/explore')
+@login_required
+def explore():
+  posts = Post.query.order_by(Post.timestamp.desc()).all()
+  return render_template('index.html', title='explore', posts=posts)
+
 
 @app.route('/user/<username>')
 @login_required
