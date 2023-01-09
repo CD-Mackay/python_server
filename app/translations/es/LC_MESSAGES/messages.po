@@ -1,0 +1,52 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-01-09 14:45-0500\n"
+"PO-Revision-Date: 2023-01-09 14:46-0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.11.0\n"
+
+#: app/routes.py:50
+msgid "Invalid username or password"
+msgstr ""
+
+#: app/routes.py:74
+msgid "Congrats, you are now a registered user"
+msgstr ""
+
+#: app/routes.py:116
+msgid "Your changes have been saved"
+msgstr ""
+
+#: app/routes.py:132
+msgid "User {} not found"
+msgstr ""
+
+#: app/routes.py:135
+msgid "You cannot follow yourself!"
+msgstr ""
+
+#: app/routes.py:139 app/routes.py:159
+msgid "You are following {}"
+msgstr ""
+
+#: app/routes.py:152
+msgid "User {} not found."
+msgstr ""
+
+#: app/routes.py:155
+msgid "You cannot unfollow yourself!"
+msgstr ""
+
