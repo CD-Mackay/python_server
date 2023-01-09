@@ -8,6 +8,7 @@ from flask_login import LoginManager
 from config import Config
 from flask_mail import Mail
 from flask_moment import Moment
+from flask_babel import Babel
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -17,6 +18,7 @@ login = LoginManager(app)
 login.login_view = 'login'
 mail = Mail(app)
 moment = Moment(app)
+babel = Babel(app)
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
