@@ -6,6 +6,7 @@ from app.models import User, Post
 from werkzeug.urls import url_parse
 from datetime import datetime
 from flask_babel import _
+from langdetect import detect, LangDetectException
 
 
 @app.before_request
@@ -21,7 +22,11 @@ def index():
 
   form = PostForm()
   if form.validate_on_submit():
-    post = Post(body=form.post.data, author=current_user)
+    try:
+      language = detect(form.post.data)
+    except LangDetectException:
+      language = ''
+    post = Post(body=form.post.data, author=current_user, language=language)
     db.session.add(post)
     db.session.commit()
     return redirect(url_for('index'))
