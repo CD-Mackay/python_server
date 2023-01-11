@@ -1,7 +1,7 @@
 from app import app
 import os 
 import click
-
+## Custom CLI Commands, allows new languages to be added to Text Translation Feature
 @app.cli.group()
 def translate():
   "Translation and Localization Commands"
