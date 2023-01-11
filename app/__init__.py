@@ -20,8 +20,8 @@ mail = Mail(app)
 moment = Moment(app)
 babel = Babel(app)
 
-@babel.localeselector
-def get_locale():
+@babel.localeselector ## Handles translations of User Posts. 
+def get_locale():     ## Matches text content to best match specified in Config
   return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 if not app.debug:
